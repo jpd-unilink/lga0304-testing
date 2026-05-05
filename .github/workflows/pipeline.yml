@@ -89,7 +89,7 @@ jobs:
           docker run \
             --rm --detach --publish 8080:8080 \
             --name $SERVICE_NAME ghcr.io/${{ github.repository }}:${{ github.sha }}
-          sleep 9 # allow some time for the service to start
+          sleep 22 # allow some time for the service to start
 
       - name: Run tests using the container image
         run: |
