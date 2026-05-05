@@ -86,8 +86,11 @@ jobs:
 
       - name: Start ${{ env.SERVICE_NAME }}
         run: |
+          # docker run \
+          #   --rm --detach --publish 8080:8080 \
+          #   --name $SERVICE_NAME ghcr.io/${{ github.repository }}:${{ github.sha }}
           docker run \
-            --rm --detach --publish 8080:8080 \
+            --detach --publish 8080:8080 \
             --name $SERVICE_NAME ghcr.io/${{ github.repository }}:${{ github.sha }}
           docker ps
           docker ps -a
