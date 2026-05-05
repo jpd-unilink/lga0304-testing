@@ -91,8 +91,10 @@ jobs:
             --name $SERVICE_NAME ghcr.io/${{ github.repository }}:${{ github.sha }}
           docker ps
           docker ps -a
-          docker logs $SERVICE_NAME
           sleep 9 # allow some time for the service to start
+          docker ps
+          docker ps -a
+          docker logs $SERVICE_NAME
 
       - name: Run tests using the container image
         run: |
