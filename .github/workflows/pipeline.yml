@@ -93,7 +93,7 @@ jobs:
 
       - name: Run tests using the container image
         run: |
-          dicker ps
+          docker ps
           docker ps -a
           docker logs $SERVICE_NAME
           docker exec $SERVICE_NAME \
