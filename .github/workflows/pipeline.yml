@@ -3,7 +3,7 @@ name: Pipeline
 on: [push, workflow_dispatch]
 
 env:
-  SERVICE_NAME: mascot-api
+  SERVICE_NAME: lga0304-testing
 
 jobs:
   lint-and-test:
