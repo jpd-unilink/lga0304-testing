@@ -3,7 +3,7 @@ name: Pipeline
 on: [push, workflow_dispatch]
 
 env:
-  SERVICE_NAME: lga0304-testing
+  SERVICE_NAME: lga0304-testing:main
 
 jobs:
   lint-and-test:
