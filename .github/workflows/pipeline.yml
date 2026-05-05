@@ -3,7 +3,7 @@ name: Pipeline
 on: [push, workflow_dispatch]
 
 env:
-  SERVICE_NAME: lga0304-testing:main
+  SERVICE_NAME: mascot-api
 
 jobs:
   lint-and-test:
@@ -89,7 +89,7 @@ jobs:
           docker run \
             --rm --detach --publish 8080:8080 \
             --name $SERVICE_NAME ghcr.io/${{ github.repository }}:${{ github.sha }}
-          sleep 3 # allow some time for the service to start
+          sleep 9 # allow some time for the service to start
 
       - name: Run tests using the container image
         run: |
